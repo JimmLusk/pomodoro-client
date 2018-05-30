@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Timer from './components/timer';
+import Tomato from './components/tomato';
 
 
 class App extends Component {
@@ -8,6 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <Timer/>
+        <Tomato/>
       </div>
     );
   }

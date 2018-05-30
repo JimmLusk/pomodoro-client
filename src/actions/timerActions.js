@@ -39,3 +39,10 @@ export const updateTimeRemaining = (timeRemaining) => {
     timeRemaining
   }
 }
+export const SET_CONTROLS_LOCKED = 'SET_CONTROLS_LOCKED';
+export const setControlsLocked = (locked) => {
+  return {
+    type: SET_CONTROLS_LOCKED,
+    locked,
+  }
+}

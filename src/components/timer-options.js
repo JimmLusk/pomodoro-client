@@ -17,11 +17,15 @@ export class TimerOptions extends React.Component{
   }
   
   handleWorkChange(e){
-    this.props.dispatch(setWorkTime(e.target.value));
+    if(!this.props.locked){
+      this.props.dispatch(setWorkTime(e.target.value));
+    }
   }
 
   handleBreakChange(e){
-    this.props.dispatch(setBreakTime(e.target.value));
+    if(!this.props.locked){
+      this.props.dispatch(setBreakTime(e.target.value));
+    }
   }
 
 
@@ -53,6 +57,7 @@ const mapStateToProps = state => {
   return {
     workTime: state.workTime,
     breakTime: state.breakTime,
+    locked: state.controlsLocked,
   }
 }
 

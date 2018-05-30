@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import { stopTimer, updateTimeRemaining } from '../actions/timerActions';
+import { stopTimer, updateTimeRemaining, setControlsLocked } from '../actions/timerActions';
 
 export class TimerDisplay extends React.Component{
   
@@ -9,14 +9,17 @@ export class TimerDisplay extends React.Component{
     if(!prevProps.running && this.props.running){
       this.startTimerInterval();
     }
+    if(prevProps.running && !this.props.running){
+      this.stopTimerInterval();
+    }
   }
 
   startTimerInterval(){
     this.props.dispatch(updateTimeRemaining((this.props.startTime + this.props.workTime) - Date.now()));
+    this.props.dispatch(setControlsLocked(true));
     this.timerInterval = setInterval(()=>{
       this.props.dispatch(updateTimeRemaining((this.props.startTime + this.props.workTime) - Date.now()));
       if(this.props.timeRemaining <= 1000){
-        clearInterval(this.timerInterval);
         this.stopTimerInterval();
       }
     }  
@@ -29,7 +32,9 @@ export class TimerDisplay extends React.Component{
     if (!this.timerInterval) {
 			return;
 		}
-		clearInterval(this.refreshInterval);
+    clearInterval(this.timerInterval);
+    this.props.dispatch(stopTimer());
+    this.props.dispatch(setControlsLocked(false));
   }
   
   
