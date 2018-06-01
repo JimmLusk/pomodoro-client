@@ -23,17 +23,15 @@ export class TimerControls extends React.Component{
       <div>
         <form onSubmit={(e) => {
           e.preventDefault();
-          if(!this.props.locked){
             this.onStart();
-          }
         }}>
-        <button type="submit">Start</button>
+        <button disabled={this.props.locked} type="submit">Start</button>
         </form>
         <form onSubmit={(e) => {
           e.preventDefault();
           this.onQuit();
         }}>
-        <button type="submit">Quit</button>
+        <button disabled={!this.props.locked} type="submit">Quit</button>
         </form>
       </div>
     )
@@ -42,7 +40,7 @@ export class TimerControls extends React.Component{
 
 const mapStateToProps = state => {
   return {
-    locked: state.controlsLocked,
+    locked: state.timer.controlsLocked,
   }
 }
 

@@ -56,12 +56,12 @@ export class TimerDisplay extends React.Component{
 
 const mapStateToProps = state => {
   return {
-    timeRemaining: state.timeRemaining,
-    workTime: state.workTime,
-    breakTime: state.breakTime,
-    running: state.running,
-    startTime: state.startTime,
-    timerType: state.currentTimer,
+    timeRemaining: state.timer.timeRemaining,
+    workTime: state.timer.workTime,
+    breakTime: state.timer.breakTime,
+    running: state.timer.running,
+    startTime: state.timer.startTime,
+    timerType: state.timer.currentTimer,
   }
 }
 

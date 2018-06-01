@@ -9,7 +9,7 @@ export class Tomato extends React.Component{
   render(){
     return (
       <div>
-        <img src={tomato} alt='tomato'/><span>x3</span>
+        <img src={tomato} alt='tomato'/><span>x5</span>
       </div>
     )
   }

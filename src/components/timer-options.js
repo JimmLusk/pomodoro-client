@@ -17,15 +17,11 @@ export class TimerOptions extends React.Component{
   }
   
   handleWorkChange(e){
-    if(!this.props.locked){
-      this.props.dispatch(setWorkTime(e.target.value));
-    }
+    this.props.dispatch(setWorkTime(e.target.value));
   }
 
   handleBreakChange(e){
-    if(!this.props.locked){
-      this.props.dispatch(setBreakTime(e.target.value));
-    }
+    this.props.dispatch(setBreakTime(e.target.value));
   }
 
 
@@ -38,7 +34,7 @@ export class TimerOptions extends React.Component{
             // ref={(element) => {this.setToDefaultValue(element)}}
             onChange={(e) => {this.handleWorkChange(e)}}
             type="range" min="10" max="60" className="slider js-slider js-work-slider"
-            defaultValue="25"/>
+            defaultValue="25" disabled={this.props.locked}/>
         </div>
         <div className="slidecontainer break-time-container">
           <h3>Break: <span className="slider-value js-slider-value js-break-value">{this.props.breakTime/60000} </span><span>Minutes</span></h3>
@@ -46,7 +42,7 @@ export class TimerOptions extends React.Component{
             // ref={(element) => {this.setToDefaultValue(element)}}
             onChange={(e) => {this.handleBreakChange(e)}}
             type="range" min="0" max="20" className="slider js-slider js-break-slider"
-            defaultValue="5"/>
+            defaultValue="5" disabled={this.props.locked}/>
         </div>
       </div>
     )
@@ -55,9 +51,9 @@ export class TimerOptions extends React.Component{
 
 const mapStateToProps = state => {
   return {
-    workTime: state.workTime,
-    breakTime: state.breakTime,
-    locked: state.controlsLocked,
+    workTime: state.timer.workTime,
+    breakTime: state.timer.breakTime,
+    locked: state.timer.controlsLocked,
   }
 }
 
