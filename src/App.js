@@ -7,9 +7,22 @@ import Timer from './components/timer';
 import LoginPage from './components/login-page';
 import RegistrationPage from './components/registration-page';
 import LandingPage from './components/landing-page';
+//import loadAuthToken from './local-storage';
+import { loadAuthToken } from './local-storage';
+import { setAuthToken, setUserWithToken } from './actions/authActions';
+import { bindActionCreators } from 'redux';
 
 
 class App extends Component {
+
+   componentDidMount() {
+     const authToken = loadAuthToken();
+     if(authToken){
+      this.props.setAuthToken(authToken);
+      this.props.setUserWithToken(authToken);
+     }
+   }
+
   render() {
     return (
       <div className="App">
@@ -27,4 +40,11 @@ const mapStateToProps = state => ({
 	loggedIn: state.auth.currentUser !== null
 });
 
-export default withRouter(connect(mapStateToProps)(App));
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    setAuthToken,
+    setUserWithToken,
+  }, dispatch);
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

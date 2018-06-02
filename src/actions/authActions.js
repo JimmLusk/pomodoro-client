@@ -1,4 +1,4 @@
-import { saveAuthToken, clearAuthToken } from '../local-storage';
+import { saveAuthToken } from '../local-storage';
 import {SubmissionError} from 'redux-form';
 import {API_BASE_URL} from '../config';
 import jwtDecode from 'jwt-decode';
@@ -38,9 +38,15 @@ export const setDialog = (dialog) => ({
   dialog,
 })
 
+export const SET_USER = 'SET_USER';
+export const setUser = (user) => ({
+  type: SET_USER,
+  user
+})
+
 const storeAuthToken = (authToken, dispatch) => {
   const decodedToken = jwtDecode(authToken);
-	dispatch(setAuthToken(authToken));
+  dispatch(setAuthToken(authToken));
   dispatch(authSuccess(decodedToken.user));
   saveAuthToken(authToken);
 }
@@ -68,11 +74,16 @@ export const login = (username, password) => dispatch => {
           : 'Unable to login, please try again';
       dispatch(authError(err));
       return Promise.reject(
-        new Error({
+        new SubmissionError({
           error: message,
         })
       );
     })
   );
 };
+
+export const setUserWithToken = (authToken) => dispatch => {
+  const decodedToken = jwtDecode(authToken);
+  dispatch(setUser(decodedToken.user));
+}
 

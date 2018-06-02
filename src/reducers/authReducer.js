@@ -5,6 +5,7 @@ import {
   AUTH_SUCCESS,
   AUTH_ERROR,
   SET_DIALOG,
+  SET_USER,
 } from '../actions/authActions';
 
 
@@ -46,6 +47,10 @@ export default function reducer(state = initialState, action) {
       return Object.assign({}, state, {
         dialog: action.dialog,
       });
+    case SET_USER:
+      return Object.assign({}, state, {
+        currentUser: action.user,
+      })
     default: 
       return state;
   }
