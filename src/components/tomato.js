@@ -9,10 +9,15 @@ export class Tomato extends React.Component{
   render(){
     return (
       <div>
-        <img src={tomato} alt='tomato'/><span>x5</span>
+        <img src={tomato} alt='tomato'/><span>x{this.props.tomatCount}</span>
       </div>
     )
   }
 }
 
-export default connect()(Tomato);
+const mapStateToProps = state => ({
+  tomatCount : state.auth.currentUser.tomats.length,
+  tomats: state.auth.currentUser.tomats, 
+});
+
+export default connect(mapStateToProps)(Tomato);

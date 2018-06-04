@@ -5,6 +5,7 @@ import TimerDisplay from './timer-display.js';
 import TimerControls from './timer-controls.js';
 import TimerOptions from './timer-options.js';
 import Tomato from './tomato.js';
+import LogoutButton from './logout-button';
 
 export class Timer extends React.Component{
  
@@ -16,6 +17,7 @@ export class Timer extends React.Component{
         <TimerControls/>
         <TimerOptions/>
         <Tomato/>
+        <LogoutButton/>
       </div>
     )
   }

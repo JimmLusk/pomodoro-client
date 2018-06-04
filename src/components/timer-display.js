@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import { stopTimer, updateTimeRemaining, setControlsLocked } from '../actions/timerActions';
+import { addTomat } from '../actions/tomatActions';
 
 export class TimerDisplay extends React.Component{
   
@@ -15,12 +16,13 @@ export class TimerDisplay extends React.Component{
   }
 
   startTimerInterval(){
-    this.props.dispatch(updateTimeRemaining((this.props.startTime + this.props.workTime) - Date.now()));
+    this.props.dispatch(updateTimeRemaining((this.props.startTime + this.props.workTime) - Date.now()+10));
     this.props.dispatch(setControlsLocked(true));
     this.timerInterval = setInterval(()=>{
-      this.props.dispatch(updateTimeRemaining((this.props.startTime + this.props.workTime) - Date.now()));
+      this.props.dispatch(updateTimeRemaining((this.props.startTime + this.props.workTime) - Date.now()+10));
       if(this.props.timeRemaining <= 1000){
         this.stopTimerInterval();
+        this.props.dispatch(addTomat({type: 'tomato', variety: 'cherry'}))
       }
     }  
     ,1000);

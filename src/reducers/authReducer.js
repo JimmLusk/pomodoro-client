@@ -8,6 +8,10 @@ import {
   SET_USER,
 } from '../actions/authActions';
 
+import {
+  ADD_TOMAT,
+} from '../actions/tomatActions';
+
 
 const initialState = {
   authToken: null,
@@ -50,6 +54,10 @@ export default function reducer(state = initialState, action) {
     case SET_USER:
       return Object.assign({}, state, {
         currentUser: action.user,
+      })
+    case ADD_TOMAT:
+      return Object.assign({}, state, {
+        currentUser: {...state.currentUser, tomats: [...state.currentUser.tomats, action.tomat]},
       })
     default: 
       return state;

@@ -12,8 +12,8 @@ const initialState = {
   currentTimerType: 'work',
   running: false,
   startTime: null,
-  workTime: 25*60*1000,
-  breakTime: 5*60*1000,
+  workTime: 25*1*1000,
+  breakTime: 5*1*1000,
   timeRemaining: 0,
   controlsLocked: false,
 };
@@ -39,11 +39,11 @@ export default function reducer(state = initialState, action){
       });
     case SET_WORK_TIME:
       return Object.assign({}, state, {
-        workTime: action.time*60*1000
+        workTime: action.time*1*1000
       });
     case SET_BREAK_TIME:
       return Object.assign({}, state, {
-        breakTime: action.time*60*1000
+        breakTime: action.time*1*1000
       });
     case UPDATE_TIME_REMAINING:
       return Object.assign({}, state, {

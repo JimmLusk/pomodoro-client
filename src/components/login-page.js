@@ -10,14 +10,12 @@ export function LoginPage(props){
   }
   
   return (
-    <div className="home">
+    <div className="login">
       <h2>Log Back Into Pomodoro Type Beat</h2>
       <LoginForm />
       <Link to="/register">Register</Link>
     </div>
   );
-
-
 }
 
 const mapStateToProps = state => ({

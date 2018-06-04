@@ -1,8 +1,7 @@
-import { saveAuthToken } from '../local-storage';
+import { saveAuthToken, clearAuthToken } from '../local-storage';
 import {SubmissionError} from 'redux-form';
 import {API_BASE_URL} from '../config';
 import jwtDecode from 'jwt-decode';
-
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = (authToken) => ({
@@ -45,10 +44,19 @@ export const setUser = (user) => ({
 })
 
 const storeAuthToken = (authToken, dispatch) => {
-  const decodedToken = jwtDecode(authToken);
   dispatch(setAuthToken(authToken));
   dispatch(authSuccess(decodeAndRemovePasswordFromJWT(authToken)));
   saveAuthToken(authToken);
+}
+
+export const setUserWithToken = (authToken) => dispatch => {
+  dispatch(setUser(decodeAndRemovePasswordFromJWT(authToken)));
+}
+
+const decodeAndRemovePasswordFromJWT = (token) => {
+  const decoded = jwtDecode(token);
+  const { name, _id, username, tomats } = decoded.user;
+  return {_id, name, username, tomats };
 }
 
 export const login = (username, password) => dispatch => {
@@ -82,13 +90,7 @@ export const login = (username, password) => dispatch => {
   );
 };
 
-export const setUserWithToken = (authToken) => dispatch => {
-  dispatch(setUser(decodeAndRemovePasswordFromJWT(authToken)));
-}
-
-const decodeAndRemovePasswordFromJWT = (token) => {
-  const decoded = jwtDecode(token);
-  const { name, _id, username, tomats } = decoded.user;
-  return {_id, name, username, tomats };
-}
-
+export const logout = () => dispatch => {
+  dispatch(clearAuth());
+  clearAuthToken();
+};
