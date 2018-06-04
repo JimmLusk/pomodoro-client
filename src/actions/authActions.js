@@ -47,7 +47,7 @@ export const setUser = (user) => ({
 const storeAuthToken = (authToken, dispatch) => {
   const decodedToken = jwtDecode(authToken);
   dispatch(setAuthToken(authToken));
-  dispatch(authSuccess(decodedToken.user));
+  dispatch(authSuccess(decodeAndRemovePasswordFromJWT(authToken)));
   saveAuthToken(authToken);
 }
 
@@ -83,7 +83,12 @@ export const login = (username, password) => dispatch => {
 };
 
 export const setUserWithToken = (authToken) => dispatch => {
-  const decodedToken = jwtDecode(authToken);
-  dispatch(setUser(decodedToken.user));
+  dispatch(setUser(decodeAndRemovePasswordFromJWT(authToken)));
+}
+
+const decodeAndRemovePasswordFromJWT = (token) => {
+  const decoded = jwtDecode(token);
+  const { name, _id, username, tomats } = decoded.user;
+  return {_id, name, username, tomats };
 }
 
