@@ -12,8 +12,8 @@ const initialState = {
   currentTimerType: 'work',
   running: false,
   startTime: null,
-  workTime: 25*1*1000,
-  breakTime: 5*1*1000,
+  workTime: 25*60*1000,
+  breakTime: 5*60*1000,
   timeRemaining: 0,
   controlsLocked: false,
 };

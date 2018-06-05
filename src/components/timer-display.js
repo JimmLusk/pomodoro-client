@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import { stopTimer, updateTimeRemaining, setControlsLocked } from '../actions/timerActions';
-import { addTomat } from '../actions/tomatActions';
+import { sendTomat } from '../actions/tomatActions';
 
 export class TimerDisplay extends React.Component{
   
@@ -22,7 +22,7 @@ export class TimerDisplay extends React.Component{
       this.props.dispatch(updateTimeRemaining((this.props.startTime + this.props.workTime) - Date.now()+10));
       if(this.props.timeRemaining <= 1000){
         this.stopTimerInterval();
-        this.props.dispatch(addTomat({type: 'tomato', variety: 'cherry'}))
+        this.props.dispatch(sendTomat({type: 'tomato', variety: 'cherry'}, this.props.authToken, this.props.userId))
       }
     }  
     ,1000);
@@ -64,6 +64,8 @@ const mapStateToProps = state => {
     running: state.timer.running,
     startTime: state.timer.startTime,
     timerType: state.timer.currentTimer,
+    authToken: state.auth.authToken,
+    userId: state.auth.currentUser._id,
   }
 }
 
