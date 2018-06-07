@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import {Route, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import './App.css';
-import TimerPage from './components/timer-page';
-import LoginPage from './components/login-page';
-import RegistrationPage from './components/registration-page';
-import LandingPage from './components/landing-page';
-import { loadAuthToken } from './local-storage';
-import { setAuthToken, setUserWithToken } from './actions/authActions';
+import './styles/App.css';
+import TimerPage from './timer-page';
+import LoginPage from './login-page';
+import RegistrationPage from './registration-page';
+import LandingPage from './landing-page';
+import { loadAuthToken } from '../local-storage.js';
+import { setAuthToken, setUserWithToken } from '../actions/authActions';
 import { bindActionCreators } from 'redux';
 
 
-class App extends Component {
+export class App extends Component {
 
   componentWillMount() {
     const authToken = loadAuthToken();

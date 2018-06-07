@@ -1,3 +1,7 @@
+export const abc = (a) =>{
+	return a;
+}
+
 export const loadAuthToken = () => {
 	return localStorage.getItem('authToken');
 };

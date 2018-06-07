@@ -5,8 +5,6 @@ import './styles/header-bar.css'
 
 
 export class HeaderBar extends React.Component {
-
-
   render(){
     return(
       <header className='header-bar'>
