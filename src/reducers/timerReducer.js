@@ -39,7 +39,7 @@ export default function reducer(state = initialState, action){
       });
     case SET_WORK_TIME:
       return Object.assign({}, state, {
-        workTime: action.time*1*1000
+        workTime: action.time*0.5*1000
       });
     case SET_BREAK_TIME:
       return Object.assign({}, state, {

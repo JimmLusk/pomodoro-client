@@ -8,7 +8,7 @@ export default () => Component => {
     if(authenticating){
       return <div>Logging In... (attempting to reach your garden)</div>;    
     } else if (!loggedIn || error){
-      return <Redirect to="/" />;
+      setTimeout(function(){return <Redirect to="/" />;}, 50);
     }
 
     return <Component {...passThroughProps} />;

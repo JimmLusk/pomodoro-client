@@ -1,0 +1,18 @@
+
+.start-button{
+  background-color: lightgreen;
+  color: black;
+  font-size: 18px;
+  border: none;
+  padding: 12px 17px;
+  margin-bottom: 3px; 
+  border-radius: 25px;
+}
+
+.quit-button{
+  background-color: tomato;
+  color: black;
+  border: none;
+  padding: 7px 10px;
+  border-radius: 15px;
+}

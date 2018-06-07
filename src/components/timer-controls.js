@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import { startTimer, resetTimer, stopTimer } from '../actions/timerActions';
+import './styles/timer-controls.css';
 
 export class TimerControls extends React.Component{
 
@@ -20,18 +21,18 @@ export class TimerControls extends React.Component{
 
   render(){
     return (
-      <div>
+      <div className='controls-container'>
         <form onSubmit={(e) => {
           e.preventDefault();
             this.onStart();
         }}>
-        <button disabled={this.props.locked} type="submit">Start</button>
+        <button className='start-button' disabled={this.props.locked} type="submit">Start</button>
         </form>
         <form onSubmit={(e) => {
           e.preventDefault();
           this.onQuit();
         }}>
-        <button disabled={!this.props.locked} type="submit">Quit</button>
+        <button className='quit-button' disabled={!this.props.locked} type="submit">Quit</button>
         </form>
       </div>
     )

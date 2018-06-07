@@ -1,0 +1,30 @@
+
+.timer-link-container{
+  background-color: lightgreen;
+  padding: 10px;
+  border-radius: 25px;
+  margin: 10px auto;
+  width: 150px;
+  justify-content: left;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.login-link-container, .register-link-container{
+  background-color: lightgreen;
+  padding: 10px;
+  border-radius: 25px;
+  margin: 10px auto;
+  width: 150px;
+  justify-content: left;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.timer-link, .login-link, .register-link{
+  text-decoration: none;
+  color: black;
+}
+
+.arrow{
+  margin: 0;
+  height: 20px;
+}

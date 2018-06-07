@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import { stopTimer, updateTimeRemaining, setControlsLocked } from '../actions/timerActions';
 import { sendTomat } from '../actions/tomatActions';
 
+import './styles/timer-display.css'
+
 export class TimerDisplay extends React.Component{
   
   componentDidUpdate(prevProps){
@@ -22,7 +24,7 @@ export class TimerDisplay extends React.Component{
       this.props.dispatch(updateTimeRemaining((this.props.startTime + this.props.workTime) - Date.now()+10));
       if(this.props.timeRemaining <= 1000){
         this.stopTimerInterval();
-        this.props.dispatch(sendTomat({type: 'tomato', variety: 'cherry'}, this.props.authToken, this.props.userId))
+        this.props.dispatch(sendTomat({type: 'tomato', variety: 'cherry'}, this.props.authToken, '5'))
       }
     }  
     ,1000);
@@ -49,8 +51,10 @@ export class TimerDisplay extends React.Component{
 
   render(){
     return (
-      <div>
-        <h2>{this.convertToDisplayTime(this.props.timeRemaining)}</h2>
+      <div className='displayed-time-container'>
+        <span className='displayed-time'>
+          {this.convertToDisplayTime(this.props.timeRemaining)}
+        </span>
       </div>
     )
   }
