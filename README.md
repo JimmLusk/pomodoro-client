@@ -11,17 +11,23 @@ In the future I'd like to add additoional fetures like growing different plants 
  
 [Backend Repository](https://github.com/JimmLusk/pomodoro-type-beat-server)
 
-Landing Page
+###Landing Page
 ![Landing Page](https://github.com/JimmLusk/pomodoro-type-beat-client/blob/master/readme-images/LandingPage.PNG)
 
-Registration Page
+###Registration Page
 ![Register](https://github.com/JimmLusk/pomodoro-type-beat-client/blob/master/readme-images/register.PNG)
 
-Login Page
+###Login Page
 ![Login](https://github.com/JimmLusk/pomodoro-type-beat-client/blob/master/readme-images/Login.PNG)
 
-Main Timer Page (Desktop)
+###Main Timer Page (Desktop)
 ![Timer](https://github.com/JimmLusk/pomodoro-type-beat-client/blob/master/readme-images/timerpagewide.PNG)
 
-Main Timer Page (Mobile)
+###Main Timer Page (Mobile)
 ![Timer2](https://github.com/JimmLusk/pomodoro-type-beat-client/blob/master/readme-images/timerpagenarrow.PNG)
+
+####Tech Stack
+MongoDB (mLab)
+Express
+React
+Node
