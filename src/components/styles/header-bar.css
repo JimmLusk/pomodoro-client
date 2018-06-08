@@ -1,11 +1,17 @@
 header {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 75px;
   grid-template-rows: 1fr;
-  justify-items: start;
   align-items: center;
 
   background-color: #4D7D51;
+  background-color: #85aa5c;
+  background-color: rgb(96, 174, 89);
+  
 
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /*box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
+}
+
+nav{
+  height: 100%;
 }

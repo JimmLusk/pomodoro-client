@@ -9,7 +9,7 @@ export class HeaderBar extends React.Component {
     return(
       <header className='header-bar'>
         <div>
-          Katch Up
+          <h1>Katch Up</h1>
         </div>
         <nav>
           <LogoutButton className='logout-button'/>

@@ -1,0 +1,21 @@
+
+.logout{
+  height: 100%;
+}
+
+.logout form{
+  height: 100%;
+}
+
+.logout button{
+  border:none;
+  height: 75px;
+  width: 100%;
+  background-color: rgb(96, 174, 89);
+}
+
+.logout button:hover{  
+  border-bottom: 5px rgb(239, 245, 239) solid;
+  cursor: pointer;
+  transition: 0.25s;
+}

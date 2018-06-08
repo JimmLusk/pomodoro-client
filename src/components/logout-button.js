@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
 import { logout } from '../actions/authActions';
+
+import './styles/logout-button.css';
 
 export function LogoutButton(props){
   
@@ -10,12 +11,13 @@ export function LogoutButton(props){
   return (
     <div className="logout">
       <form onSubmit={(e) => {
+        console.log('log out');
         e.preventDefault();
         props.dispatch(logout());
-        return <Redirect to='/'/>
+        return;
       }}>
       <button  
-        type='submit' 
+        type='submit' className='logout-button'
         disabled={!props.loggedIn}>
         Logout
       </button>

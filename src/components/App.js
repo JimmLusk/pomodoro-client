@@ -12,20 +12,14 @@ import { bindActionCreators } from 'redux';
 
 
 export class App extends Component {
-
-  componentWillMount() {
+  constructor(props) {
+    super(props);
     const authToken = loadAuthToken();
     if(authToken){
-    this.props.setAuthToken(authToken);
-    this.props.setUserWithToken(authToken);
+      this.props.setAuthToken(authToken);
+      this.props.setUserWithToken(authToken);
     }
   }
-
-  // static getDerivedStateFromProps(props, state){
-  //   console.log(props);
-  //   console.log(state);
-  // }
-
 
   render() {
     return (

@@ -6,7 +6,7 @@
 html, body, #root{
   height: 100%;
   background-color: #f0bd87;
-  background-color: #eec4a6;
-  /*background-color: #8eb890;*/
+  background-color: #fafafa;
+  background-color: rgb(242, 245, 235);
 }
 

@@ -1,5 +1,4 @@
 img {
-  margin-top: 40px;
   width: 50px;
 }
 
@@ -7,8 +6,20 @@ span{
   font-size: 20px;
 }
 
-.garden{
+.basket{
   background-color: #f5efe9;
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  max-height: 100px;
+}
+
+section{
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
+}
+
+.basket-label{
+  margin-left:10px;
 }
