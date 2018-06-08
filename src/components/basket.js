@@ -24,6 +24,7 @@ export class Basket extends React.Component{
 const mapStateToProps = state => ({
   tomatCount : state.auth.currentUser.tomats.length,
   tomats: state.auth.currentUser.tomats, 
+  
 });
 
 export default connect(mapStateToProps)(Basket);
