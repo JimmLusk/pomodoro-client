@@ -1,0 +1,31 @@
+
+.generic-input{
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  
+  
+}
+
+.login-inputs-container{
+  width: 200px;
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 25px;
+  background-color: #f8f1e9;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form-input{
+  margin: 5px;
+}
+
+.login-button{
+  background-color: lightgreen;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.login-button:hover{
+  cursor: pointer;
+}

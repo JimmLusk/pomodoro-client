@@ -6,7 +6,6 @@
   margin: 10px auto;
   width: 150px;
   justify-content: left;
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 12px 0 rgba(0, 0, 0, 0.2);
 }
 
 .login-link-container, .register-link-container{
@@ -16,7 +15,6 @@
   margin: 10px auto;
   width: 150px;
   justify-content: left;
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 12px 0 rgba(0, 0, 0, 0.2);
 }
 
 .timer-link, .login-link, .register-link{
@@ -24,7 +22,6 @@
   color: black;
 }
 
-.arrow{
-  margin: 0;
-  height: 20px;
+.timer-link-container:hover{
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 12px 0 rgba(0, 0, 0, 0.2);
 }

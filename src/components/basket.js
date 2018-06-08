@@ -11,7 +11,7 @@ export class Basket extends React.Component{
     return (
       <section className='basket card'>
         <div className='basket-label'>
-          <img src={basket} alt='basket'/><span>Basket</span>
+          <img src={basket} alt='basket'/><span></span>
         </div>
         <div className='basket-contents'>
           <img src={tomato} alt='tomato'/><span>x{this.props.tomatCount}</span>

@@ -3,6 +3,8 @@ import RegistrationForm from './registration-form';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 
+import './styles/login-page.css';
+
 export function RegistrationPage(props){
   
   if (props.loggedIn) {
@@ -10,9 +12,12 @@ export function RegistrationPage(props){
   }
   
   return (
-    <div className="home">
-      <h2>Create an Account for Pomodoro Type Beat</h2>
-      <RegistrationForm />
+    <div>
+      <h2>Create an Account</h2>
+      <div className='login-inputs-container'>
+        <RegistrationForm />
+        </div>
+      <p>Already have an account?</p>
       <Link to="/login">Login</Link>
     </div>
   );
