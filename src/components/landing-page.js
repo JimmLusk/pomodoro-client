@@ -6,7 +6,7 @@ import './styles/landing-page.css';
 
 export function LandingPage(props){
   
-  let welcomeMsg = 'Welcome to Pomodoro Type Beet';
+  let welcomeMsg = 'Welcome to Katch Up';
 
   if (props.loggedIn) {
 		if(props.currentUser.name !== '' && props.currentUser.name !== null){
