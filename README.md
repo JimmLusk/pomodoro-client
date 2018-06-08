@@ -27,7 +27,14 @@ In the future I'd like to add additoional fetures like growing different plants 
 ![Timer2](https://github.com/JimmLusk/pomodoro-type-beat-client/blob/master/readme-images/timerpagenarrow.PNG)
 
 ####  Tech Stack
-MongoDB (mLab)
-Express
-React
-Node
++ MongoDB
+  - Mongoose
+  - mLab
++ Express
++ React
+  - Redux
+  - Redux Form
+  - Redux Thunk
++ Node
+  - Json Web Tokens
+  - Passport (JWT, Local)
